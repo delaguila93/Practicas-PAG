@@ -1,7 +1,7 @@
 #include "PagRenderer.h"
 #include <iostream>
 #include <GL\glew.h>
-#include <GLFW\glfw3.h>
+
 // - Aquí se inicializa el singleton. Todavía no se construye
 // el objeto de la clase PagRenderer porque se usa inicialización
 // perezosa (lazy initialization).
