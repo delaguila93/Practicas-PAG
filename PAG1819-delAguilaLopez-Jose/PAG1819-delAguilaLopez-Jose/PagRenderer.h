@@ -1,5 +1,7 @@
 #pragma once
 #include <cstdlib>
+#include "PagSubdivisionProfile.h"
+
 // - La clase PagRenderer encapsula toda la gestión del área de dibujo
 // OpenGL, eventos, etc.
 // Se implementa como un singleton para que pueda ser llamada desde las

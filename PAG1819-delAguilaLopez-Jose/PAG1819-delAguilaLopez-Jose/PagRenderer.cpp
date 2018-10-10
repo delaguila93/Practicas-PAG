@@ -46,6 +46,13 @@ void PagRenderer::scrollCallback(double xoffset, double yoffset) {
 		" Unidades en horizontal y " << yoffset << " unidades en vertical" << std::endl;
 }
 
+/*
+	La respuesta es no ya que OpenGl tarda mas en prepararse y se necesita que este preparado ya que si no se produciran fallos
+*/
+
+
+
+
 // - Acceder al singleton.
 // Si es la primera vez que se llama a este método de clase
 // instance es nullptr y se construye. Es lo que se llama inicialización
