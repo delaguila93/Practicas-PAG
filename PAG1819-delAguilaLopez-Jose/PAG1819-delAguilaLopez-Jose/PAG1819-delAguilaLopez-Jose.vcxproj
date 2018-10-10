@@ -74,7 +74,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>%userprofile%\Desktop\glwrappers\glfw-3.2.1.bin.WIN32\include;%userprofile%\Desktop\glwrappers\glew-2.1.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>%userprofile%\Desktop\glwrappers\glfw-3.2.1.bin.WIN32\include;%userprofile%\Desktop\glwrappers\glew-2.1.0\include;%userprofile%\Desktop\glwrappers\glm-0.9.9.0\glm\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>%userprofile%\Desktop\glwrappers\glfw-3.2.1.bin.WIN32\lib-vc2015;%userprofile%\Desktop\glwrappers\glew-2.1.0\lib\Release\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
@@ -95,7 +95,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>%userprofile%\Desktop\glwrappers\glfw-3.2.1.bin.WIN32\include;%userprofile%\Desktop\glwrappers\glew-2.1.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>%userprofile%\Desktop\glwrappers\glfw-3.2.1.bin.WIN32\include;%userprofile%\Desktop\glwrappers\glew-2.1.0\include;%userprofile%\Desktop\glwrappers\glm-0.9.9.0\glm\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -120,9 +120,15 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="PagRenderer.cpp" />
+    <ClCompile Include="PagRevolutionObject.cpp" />
+    <ClCompile Include="PagSubdivisionProfile.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="PagEnumerations.h" />
     <ClInclude Include="PagRenderer.h" />
+    <ClInclude Include="PagRevolutionObject.h" />
+    <ClInclude Include="PagStructures.h" />
+    <ClInclude Include="PagSubdivisionProfile.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
