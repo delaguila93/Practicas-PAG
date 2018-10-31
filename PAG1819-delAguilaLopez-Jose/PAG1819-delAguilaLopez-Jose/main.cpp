@@ -102,6 +102,8 @@ int main() {
 	std::cout << glGetString(GL_VERSION) << std::endl;
 	std::cout << glGetString(GL_SHADING_LANGUAGE_VERSION) << std::endl;
 	// - Registramos los callbacks que responderán a los eventos principales
+
+	PagRenderer::getInstancia()->prepareOpenGL();
 	glfwSetWindowRefreshCallback(window, window_refresh_callback);
 	glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 	glfwSetKeyCallback(window, key_callback);

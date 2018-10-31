@@ -1,6 +1,6 @@
 #pragma once
 #include <cstdlib>
-#include "PagSubdivisionProfile.h"
+#include "PagRevolutionObject.h"
 
 // - La clase PagRenderer encapsula toda la gestión del área de dibujo
 // OpenGL, eventos, etc.
@@ -22,6 +22,8 @@ public:
 	// que se necesite llamar al renderer se hará a través de este
 	// método.
 	static PagRenderer *getInstancia();
+
+	void prepareOpenGL();
 private:
 	// - En un singleton el constructor es privado. Esto impide que
 	// se puedan construir nuevos renderers aparte del singleton

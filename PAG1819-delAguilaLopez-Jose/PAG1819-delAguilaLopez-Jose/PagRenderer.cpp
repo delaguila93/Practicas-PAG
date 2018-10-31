@@ -63,3 +63,27 @@ PagRenderer *PagRenderer::getInstancia() {
 	}
 	return instance;
 }
+
+	void PagRenderer::prepareOpenGL(){
+		std::vector<glm::vec2> puntos;
+		puntos = {
+			glm::vec2(0.0,0.0),
+			glm::vec2(6.0,0.0),
+			glm::vec2(6.0,6.0),
+			glm::vec2(0.0,6.0),
+		};
+		PagRevolutionObject objeto = PagRevolutionObject(puntos, 1, 5); // puntos en 2D sin hacerle la subdivision, nº de subdivisiones y por ultimo numero de particiones que se desea
+		objeto.uso();
+		objeto.separate();
+		objeto.revolution(PAG_BOTTOM_FAN);
+		objeto.revolution(PAG_BODY);
+		objeto.revolution(PAG_TOP_FAN);
+		objeto.calculoTangentes(PAG_BOTTOM_FAN);
+		objeto.calculoTangentes(PAG_BODY);
+		objeto.calculoTangentes(PAG_TOP_FAN);
+		
+		objeto.calculoTexturas(PAG_BODY);
+
+		
+		std::cout << "A ver" << std::endl;
+	}
