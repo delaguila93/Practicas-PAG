@@ -119,16 +119,30 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="PagCamera.cpp" />
     <ClCompile Include="PagRenderer.cpp" />
     <ClCompile Include="PagRevolutionObject.cpp" />
+    <ClCompile Include="PagShaderProgram.cpp" />
     <ClCompile Include="PagSubdivisionProfile.cpp" />
+    <ClCompile Include="PagVAO.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="PagCamera.h" />
     <ClInclude Include="PagEnumerations.h" />
     <ClInclude Include="PagRenderer.h" />
     <ClInclude Include="PagRevolutionObject.h" />
+    <ClInclude Include="PagShaderProgram.h" />
     <ClInclude Include="PagStructures.h" />
     <ClInclude Include="PagSubdivisionProfile.h" />
+    <ClInclude Include="PagVAO.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="lineShader-frag.glsl" />
+    <None Include="lineShader-vert.glsl" />
+    <None Include="pointShader-frag.glsl" />
+    <None Include="pointShader-vert.glsl" />
+    <None Include="triangleShader-frag.glsl" />
+    <None Include="triangleShader-vert.glsl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

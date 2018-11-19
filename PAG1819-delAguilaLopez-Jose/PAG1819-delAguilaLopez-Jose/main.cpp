@@ -5,10 +5,10 @@
 #include <GLFW\glfw3.h>
 #include <Windows.h>
 #include "PagRenderer.h"
-
+/*
 extern "C" {
 	_declspec(dllexport) DWORD NvOptimusEnablement = 0x00000001;
-}
+}*/
 
 
 // - Esta función callback será llamada cada vez que el área de dibujo
@@ -38,8 +38,31 @@ void key_callback(GLFWwindow *window, int key, int scancode, int action, int mod
 		glfwSetWindowShouldClose(window, GLFW_TRUE);
 	}
 	else {
+		//80 p minuscula
+		if ( key == 80 && action == GLFW_PRESS ) {
+			PagRenderer::getInstancia()->cambioVisualizacion(PUNTOS);			
+		}
+		//84 t minuscula
+		if ( key == 84 && action == GLFW_PRESS ) {
+			PagRenderer::getInstancia()->cambioVisualizacion(MALLA);			
+		}
+		//76 l minuscula
+		if ( key == 76 && action == GLFW_PRESS ) {
+			PagRenderer::getInstancia()->cambioVisualizacion(LINEAS);			
+		}
+		//65 a minuscula
+		if ( key == 65 && action == GLFW_PRESS ) {
+			PagRenderer::getInstancia()->cambioVisualizacion(ALL);		
+		}
+		if ( key == 321 && action == GLFW_PRESS ) {
+			PagRenderer::getInstancia()->cambioCamara(true);			
+		}
+		if ( key == 322 && action == GLFW_PRESS ) {
+			PagRenderer::getInstancia()->cambioCamara(false);			
+		}
 		//Si se pulsa otra tecla distinta a "ESC" se llama al metodo de PagRenderer relativo a las teclas que se pulsan sin la necesidad del objeto GLFWwindow
 		PagRenderer::getInstancia()->keyCallback(key, scancode, action, mods);
+		window_refresh_callback(window);
 	}
 }
 // - Esta función callback será llamada cada vez que se pulse algún botón
@@ -103,12 +126,15 @@ int main() {
 	std::cout << glGetString(GL_SHADING_LANGUAGE_VERSION) << std::endl;
 	// - Registramos los callbacks que responderán a los eventos principales
 
-	PagRenderer::getInstancia()->prepareOpenGL();
+	PagRenderer::getInstancia()->prepareOpenGL(1024,576);
+	
 	glfwSetWindowRefreshCallback(window, window_refresh_callback);
 	glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 	glfwSetKeyCallback(window, key_callback);
 	glfwSetMouseButtonCallback(window, mouse_button_callback);
 	glfwSetScrollCallback(window, scroll_callback);
+
+	
 	// - Establecemos un gris medio como color con el que se borrará el frame buffer.
 	// No tiene por qué ejecutarse en cada paso por el ciclo de eventos.
 	glClearColor(0.6, 0.6, 0.6, 1.0);

@@ -27,6 +27,15 @@
     <ClCompile Include="PagRevolutionObject.cpp">
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
+    <ClCompile Include="PagShaderProgram.cpp">
+      <Filter>Archivos de código fuente</Filter>
+    </ClCompile>
+    <ClCompile Include="PagVAO.cpp">
+      <Filter>Archivos de código fuente</Filter>
+    </ClCompile>
+    <ClCompile Include="PagCamera.cpp">
+      <Filter>Archivos de código fuente</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="PagRenderer.h">
@@ -44,5 +53,34 @@
     <ClInclude Include="PagRevolutionObject.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
+    <ClInclude Include="PagShaderProgram.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="PagVAO.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="PagCamera.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pointShader-vert.glsl">
+      <Filter>Archivos de recursos</Filter>
+    </None>
+    <None Include="pointShader-frag.glsl">
+      <Filter>Archivos de recursos</Filter>
+    </None>
+    <None Include="triangleShader-vert.glsl">
+      <Filter>Archivos de recursos</Filter>
+    </None>
+    <None Include="triangleShader-frag.glsl">
+      <Filter>Archivos de recursos</Filter>
+    </None>
+    <None Include="lineShader-vert.glsl">
+      <Filter>Archivos de recursos</Filter>
+    </None>
+    <None Include="lineShader-frag.glsl">
+      <Filter>Archivos de recursos</Filter>
+    </None>
   </ItemGroup>
 </Project>

@@ -1,6 +1,7 @@
 #pragma once
 #include <cstdlib>
 #include "PagRevolutionObject.h"
+#include "PagShaderProgram.h"
 
 // - La clase PagRenderer encapsula toda la gestión del área de dibujo
 // OpenGL, eventos, etc.
@@ -18,12 +19,15 @@ public:
 	void keyCallback(int key, int scancode, int action, int mods);
 	void mouseButtonCallback(int button, bool presion);
 	void scrollCallback(double xoffset, double yoffset);
+	void cambioVisualizacion(TipoVisualizacion tipo);
+	void cambioCamara(bool valor);
+
 	// - Este método de clase permite acceder al singleton. Cada vez
 	// que se necesite llamar al renderer se hará a través de este
 	// método.
 	static PagRenderer *getInstancia();
 
-	void prepareOpenGL();
+	void prepareOpenGL(int _width, int _height);
 private:
 	// - En un singleton el constructor es privado. Esto impide que
 	// se puedan construir nuevos renderers aparte del singleton
@@ -31,4 +35,16 @@ private:
 	// - Este es el singleton, la única instancia de la clase PagRenderer
 	// que se tiene en la aplicación.
 	static PagRenderer *instance;
+	PagRevolutionObject objeto;
+
+	PagShaderProgram pointShader;
+	PagShaderProgram triangleShader;
+	PagShaderProgram lineShader;
+
+	TipoVisualizacion tipoVisualizacion;
+
+	bool camara;//true camara 1 - false camara 2
+
+	int width;
+	int height;
 };
